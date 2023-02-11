@@ -21,7 +21,7 @@
 .page {
     display: flex;
     height:72.0rem ;
-    margin-top: 2.0rem auto;
+    margin-top: 1.0rem auto;
 }
 
 body {
@@ -73,7 +73,11 @@ header p {
 
 .cards {
     display: grid;
-    gap: 3.0rem 
+    gap: 3.0rem ;
+
+    animation-name:  downtop ;
+    animation-duration: 900ms;
+    animation-fill-mode: forwards;
     
 }       
    
@@ -100,11 +104,21 @@ header p {
     border-radius: 2.0rem;
     padding: 0 2.4rem;
     object-fit: cover; 
+
+    animation-name: topdown;
+    animation-duration: 900ms;
+    animation-fill-mode: forwards;
 }
 
 .cards .card img {
     width: 100%;
     border-radius: 2rem;
+    
+}
+
+.card img:hover {
+    transform: scale(1.0); 
+    opacity: 0.3;
 }
 
 
@@ -125,6 +139,33 @@ footer a {
     font-weight: bold;
  
   
+}
+
+
+@keyframes topdown { /*desce*/
+    0% {
+        opacity: 0;
+        transform: translateY(-15px); 
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes downtop { 
+     0% {
+        opacity: 0;
+        transform: translateY(15px); 
+     }
+
+     100% {
+        opacity: 1;
+        transform: translateY(0);
+     }
 }
 
 
